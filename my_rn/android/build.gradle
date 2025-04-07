@@ -1,0 +1,47 @@
+buildscript {
+    ext {
+        buildToolsVersion = "35.0.0"
+        minSdkVersion = 24
+        compileSdkVersion = 35
+        targetSdkVersion = 35
+        ndkVersion = "27.1.12297006"
+        kotlinVersion = "2.0.21"
+    }
+    repositories {
+//        google()
+//        mavenCentral()
+//        重新设置镜像
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+    }
+    dependencies {
+//        classpath("com.android.tools.build:gradle")
+        classpath("com.android.tools.build:gradle:8.8.0")
+        classpath("com.facebook.react:react-native-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+    }
+}
+
+
+apply plugin: "com.facebook.react.rootproject"
+
+/**
+ * @DESC:参考文档：https://www.cnblogs.com/wxianing/p/18411895
+ *
+ * bug2:
+ * error Failed to install the app. Command failed with exit code 1: gradlew.bat app:installDebug -PreactNativeDevServerPort=8081 FAILURE: Build failed with an exception. * What went wr
+ * ong: A problem occurred configuring root project 'my_rn'
+ * 修复：
+ *
+
+ *
+ * */
