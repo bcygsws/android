@@ -118,12 +118,28 @@ To learn more about React Native, take a look at the following resources:
 
 ## 构建过程
 
-## platform-tools中的adb
+## 安装apk前的准备
 
-- 切换到
+- npm run android构建、打包和安装apk之前，adb的操作；platform-tools/adb.exe
+- 切换到SDK安装目录下，E:\android-studio\SDK\platform-tools,执行以下命令
     - add kill-server
     - add start-server
     - add reverse tcp:8081 tcp:8081
 - npx react-native doctor，命令可以辅助我们检查项目出现的一些问题
+## 入门教程
+- [入门教程](https://juejin.cn/post/7310786611258966067?searchId=202504100702336ADD8D891F777D0A887B)
+
+## 遇到Bug
+
+### 如遇到unable to load script.Make sure you're either running a metro server……
+
+- 解决办法[参考文档](https://blog.csdn.net/augfun/article/details/106679110)
+- 在android/main下创建一个assets文件夹
+- 执行以下命令：npx react-native bundle --platform android --dev false --entry-file index.js
+  --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest
+  android/app/src/main/res
+- 然后，注意查看自己项目是否有 index.android.js这个文件，如果有回车执行命令即可，否则会会报错，
+  找不到这个index.android.js文件；把index.android.js改为index.js
+- 在项目中执行npm run android 或者npx react-native run-android，打包、安装apk应用到真机或者模拟器
 
 

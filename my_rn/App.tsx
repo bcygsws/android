@@ -101,6 +101,7 @@ function App(): React.JSX.Element {
           </Section>
           <Section title="Learn More">
             Read the docs to discover what to do next:
+           鲍承毅哈哈哈~~~~~~~
           </Section>
           <LearnMoreLinks />
         </View>
