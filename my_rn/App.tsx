@@ -83,6 +83,7 @@ function App(): React.JSX.Element {
         <View style={{paddingRight: safePadding}}>
           <Header/>
         </View>
+
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
@@ -101,7 +102,7 @@ function App(): React.JSX.Element {
           </Section>
           <Section title="Learn More">
             Read the docs to discover what to do next:
-           鲍承毅哈哈哈~~~~~~~
+           鲍承毅rrraaaa~~~~~~
           </Section>
           <LearnMoreLinks />
         </View>

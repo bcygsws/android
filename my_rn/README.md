@@ -118,15 +118,31 @@ To learn more about React Native, take a look at the following resources:
 
 ## 构建过程
 
-## 安装apk前的准备
+## 三、安装apk前的准备
 
-- npm run android构建、打包和安装apk之前，adb的操作；platform-tools/adb.exe
+### 3.1 真机连接到电脑
+
+- 用一条USB线连接电脑和手机
+- 打开usb调试；开启【开发者选项】、【USB调试】、【USB安装】
+
+### 3.2 重启adb，并映射端口adb reverse
+
 - 切换到SDK安装目录下，E:\android-studio\SDK\platform-tools,执行以下命令
     - add kill-server
     - add start-server
     - add reverse tcp:8081 tcp:8081
+
+### 3.3 其他配合调试的命令
+
 - npx react-native doctor，命令可以辅助我们检查项目出现的一些问题
+
+### 3.3 启动项目
+
+- npx react-native run-android
+- 或者npm run android
+
 ## 入门教程
+
 - [入门教程](https://juejin.cn/post/7310786611258966067?searchId=202504100702336ADD8D891F777D0A887B)
 
 ## 遇到Bug
