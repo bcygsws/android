@@ -125,12 +125,24 @@ To learn more about React Native, take a look at the following resources:
 - 用一条USB线连接电脑和手机
 - 打开usb调试；开启【开发者选项】、【USB调试】、【USB安装】
 
-### 3.2 重启adb，并映射端口adb reverse
+### 3.2 adb的概念和命令
 
-- 切换到SDK安装目录下，E:\android-studio\SDK\platform-tools,执行以下命令
+#### 什么是adb
+
+- [什么是adb](https://developer.baidu.com/article/details/3305955)
+- adb是Android Debug Bridge的简称，是一个用于调试Android手机的命令行工具，它提供了一些命令，用于管理模拟器、连接手机、安装、卸载、调试应用程序等操作
+- adb的工作原理：adb有三部分组成，分别为客户端、服务器和守护进程（daemon）；当开发者使用命令行终端运行adb命令时，客户端会将命令发送给服务端，服务端将命令转发
+  相应的守护进程，守护进程在设备上运行，执行结果返回给服务端；服务端再将结果转发给客户端，最终显示在命令行终端上
+- adb devices 查看手机连接的情况，adb默认端口是5037端口，如果端口被占用，则需要查看端口占用情况，释放该端口
+    - 查找该端口下的任务id：task_id，使用命令：netstat -ano|findstr 5037
+    - 查看任务id所在的进程id，process_id;使用命令：tasklist |findstr task_id
+    - 杀掉该进程：taskkill /f /pid process_id
+    - [杀死5037端口占用的命令](https://www.cnblogs.com/testhub/p/6284091.html)
+
+- 切换到SDK安装目录下，E:\android-studio\SDK\platform-tools,执行以下命令：
     - add kill-server
     - add start-server
-    - add reverse tcp:8081 tcp:8081
+    - add reverse tcp:5037 tcp:5037，将5037端口映射到5037端口
 
 ### 3.3 其他配合调试的命令
 
