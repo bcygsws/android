@@ -1,6 +1,8 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
+ * react native，从环境搭建到项目实践
+ * 参考文档：https://juejin.cn/post/7310786611258966067?searchId=202504130401289991E22115345BEABD93#heading-10
  *
  * @format
  */
@@ -102,7 +104,7 @@ function App(): React.JSX.Element {
           </Section>
           <Section title="Learn More">
             Read the docs to discover what to do next:
-           鲍承毅abcd
+           鲍承毅abcdxass
           </Section>
           <LearnMoreLinks />
         </View>
