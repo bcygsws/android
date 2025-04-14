@@ -114,12 +114,37 @@ To learn more about React Native, take a look at the following resources:
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub *
   *repository** for React Native.
 
-# 项目构建
+# 项目构建方式一：使用@react-native-community/cli脚手架
 
 ## 构建过程
 
 - 创建项目：npx @react-native-community/cli init myApp_01
-## 相关gradle配置
+
+## 相关gradle的基本配置
+
+- 路径gradle/wrapper/gradle-wrapper.properties中的distributedUrl切换完本地下载好的gradle.
+- 在项目目录android/local.properties文件，添加如下内容：sdk.dir=E:/android-studio/SDK，以声明环境变量中的ANDROID_HOME的值
+-
+
+在项目目录android/build.properties中修改buildToolsVersion、compileSdkVersion、minSdkVersion（最小24）、targetSdkVersion为相应的值；同时为repositories添加
+阿里云镜像
+
+- allprojects {
+  repositories {
+  maven { url 'https://maven.aliyun.com/repository/google' }
+  maven { url 'https://maven.aliyun.com/repository/jcenter' }
+  maven { url 'https://maven.aliyun.com/repository/public' }
+  }
+  }
+
+- 以上，运行npm run android命令，即可在手机上运行项目
+
+## 其他配置
+
+- 在android/gradle.properties中添加如下内容：
+- # add myself;to solve the problem:app start,but can't find path
+- # at old version,it is com.android.build.gradle.overridePathCheck=true
+- android.overridePathCheck=true
 
 ## 三、安装apk前的准备
 
@@ -153,12 +178,28 @@ To learn more about React Native, take a look at the following resources:
 
 ### 3.3 启动项目
 
-- npx react-native run-android
-- 或者npm run android
+- npx react-native run-android 或者npm run android 启动项目
 
 ## 入门教程
 
 - [入门教程](https://juejin.cn/post/7310786611258966067?searchId=202504100702336ADD8D891F777D0A887B)
+
+# 项目构建方式二：使用create-expo-app
+
+## 构建过程
+
+- npx create-expo-app@latest myApp_02
+
+## 查看模拟器设备运行情况
+
+- adb devices
+- adb kill-server
+- adb start-server
+- adb revise tcp:5037 tcp:5037
+
+## 启动项目
+
+- 切换到根目录下，执行npm run android或者npx expo start --android
 
 ## 遇到Bug
 
