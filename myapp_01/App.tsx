@@ -1,8 +1,6 @@
 /**
- * Sample React Native App
+ * @Desc:Sample React Native App
  * https://github.com/facebook/react-native
- *
- * @format
  */
 
 import React from 'react';
@@ -100,7 +98,7 @@ function App(): React.JSX.Element {
             <DebugInstructions />
           </Section>
           <Section title="Learn More">
-            Read the docs to discover what to do next:XXXaaaa
+            Read the docs to discover what to do next:
           </Section>
           <LearnMoreLinks />
         </View>
