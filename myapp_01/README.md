@@ -201,6 +201,30 @@ To learn more about React Native, take a look at the following resources:
 
 - 切换到根目录下，执行npm run android或者npx expo start --android
 
+# 四、RN中的样式的特殊之处
+
+- RN中的样式没有继承性
+    - RN中样式的继承只发生在Text组件中
+- 样式的键使用驼峰命名法
+- 所有尺寸都没有单位
+    - width:100
+- 有些特殊的样式名,css中是没有的
+    - marginHorizontal和marginVertical
+
+## 4.1 RN中样式的声明
+
+- style={{k1:v1,k2:v2}},外层是js语法，内存是样式对象
+- style={[{k1:v1},{k2:v2}]}外层大括号是js语法，内存是样式数组；后面的如果与前面的样式有重复的键，后面的会覆盖前面的
+- 在RN中，使用StyleSheet.create()创建样式对象
+    - const styles=StyleSheet.create(
+    - {
+    - container:{
+    -       width:100,
+    -       backgroundColor:'red'
+    - }
+    - }
+      )
+
 ## 遇到Bug
 
 ### 如遇到unable to load script.Make sure you're either running a metro server……
