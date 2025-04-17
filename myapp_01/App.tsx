@@ -6,6 +6,7 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
+    Dimensions,
     ScrollView,
     StatusBar,
     StyleSheet,
@@ -24,6 +25,7 @@ import {
 import Home from "./views/01_three_styles/index";
 import About from "./views/02_flex/index";
 import ReactiveFlex from "./views/03_reactive";
+import AlertButton from "./views/04_alert_button";
 
 type SectionProps = PropsWithChildren<{
     title: string;
@@ -74,7 +76,7 @@ function App(): React.JSX.Element {
     const safePadding = '2%';
     const scrollBackground = {
         // backgroundColor: isDarkMode ? Colors.black : Colors.white,
-        backgroundColor: isDarkMode ? Colors.black : Colors.white,
+        backgroundColor: isDarkMode ? Colors.black : Colors.white
     }
     return (
         <View style={backgroundStyle}>
@@ -84,7 +86,8 @@ function App(): React.JSX.Element {
                 backgroundColor={backgroundStyle.backgroundColor}
             />
             {/*移动设备主显示区*/}
-            <ScrollView style={scrollBackground}>
+            {/*高版本才可以使用100%来设置宽度，0.6版本需要使用Dimensions.get('window').width/Dimensions.get('window').height获取宽高*/}
+            <ScrollView style={[scrollBackground, {width: Dimensions.get('window').width}]}>
                 <View style={{paddingRight: safePadding, paddingLeft: safePadding}}>
                     {/*rn中style声明的三种方式*/}
                     <Home/>
@@ -92,6 +95,8 @@ function App(): React.JSX.Element {
                     <About/>
                     {/*响应式布局*/}
                     <ReactiveFlex/>
+                    {/*Alert和Button组件*/}
+                    <AlertButton/>
 
                 </View>
 

@@ -58,7 +58,7 @@ const ReactiveFlex = () => {
     )
 }
 const styles = StyleSheet.create({
-    container: {
+    container: {// 默认width是100%，可以不指定
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
     },
     item: {
         flex: 1,
+        // width: Dimensions.get('window').width / 4,
         paddingVertical: 10
     },
     text: {
