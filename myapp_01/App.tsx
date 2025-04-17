@@ -23,6 +23,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import Home from "./views/01_three_styles/index";
 import About from "./views/02_flex/index";
+import ReactiveFlex from "./views/03_reactive";
 
 type SectionProps = PropsWithChildren<{
     title: string;
@@ -70,7 +71,7 @@ function App(): React.JSX.Element {
      * You can read more about it here:
      * https://github.com/react-native-community/discussions-and-proposals/discussions/827
      */
-    const safePadding = '5%';
+    const safePadding = '2%';
     const scrollBackground = {
         // backgroundColor: isDarkMode ? Colors.black : Colors.white,
         backgroundColor: isDarkMode ? Colors.black : Colors.white,
@@ -84,11 +85,13 @@ function App(): React.JSX.Element {
             />
             {/*移动设备主显示区*/}
             <ScrollView style={scrollBackground}>
-                <View style={{paddingRight: safePadding, width: '100%'}}>
+                <View style={{paddingRight: safePadding, paddingLeft: safePadding}}>
                     {/*rn中style声明的三种方式*/}
                     <Home/>
                     {/*rn中flex 布局*/}
                     <About/>
+                    {/*响应式布局*/}
+                    <ReactiveFlex/>
 
                 </View>
 
