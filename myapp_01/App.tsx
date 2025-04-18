@@ -26,6 +26,7 @@ import Home from "./views/01_three_styles/index";
 import About from "./views/02_flex/index";
 import ReactiveFlex from "./views/03_reactive";
 import AlertButton from "./views/04_alert_button";
+import SwitchStatusBar from "./views/05_Switch_StatusBar";
 
 type SectionProps = PropsWithChildren<{
     title: string;
@@ -97,6 +98,8 @@ function App(): React.JSX.Element {
                     <ReactiveFlex/>
                     {/*Alert和Button组件*/}
                     <AlertButton/>
+                    {/*五、Switch和StatusBar组件*/}
+                    <SwitchStatusBar/>
 
                 </View>
 
