@@ -3,9 +3,10 @@
  * https://github.com/facebook/react-native
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import type {PropsWithChildren} from 'react';
 import {
+    Button,
     Dimensions,
     ScrollView,
     StatusBar,
@@ -60,6 +61,8 @@ function Section({children, title}: SectionProps): React.JSX.Element {
 
 function App(): React.JSX.Element {
     const isDarkMode = useColorScheme() === 'dark';
+    // 控制StatusBar的显示和隐藏
+    const [visibleStatus, setVisibleStatus] = useState(false);
 
     const backgroundStyle = {
         backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -85,6 +88,7 @@ function App(): React.JSX.Element {
             <StatusBar
                 barStyle={isDarkMode ? 'light-content' : 'dark-content'}
                 backgroundColor={backgroundStyle.backgroundColor}
+                hidden={visibleStatus}
             />
             {/*移动设备主显示区*/}
             {/*高版本才可以使用100%来设置宽度，0.6版本需要使用Dimensions.get('window').width/Dimensions.get('window').height获取宽高*/}
@@ -100,6 +104,12 @@ function App(): React.JSX.Element {
                     <AlertButton/>
                     {/*五、Switch和StatusBar组件*/}
                     <SwitchStatusBar/>
+                    {/*六、演示statusBar组件*/}
+                    <View>
+                        <Button title="切换StatusBar的显示/隐藏" onPress={() => {
+                            setVisibleStatus(!visibleStatus);
+                        }}></Button>
+                    </View>
 
                 </View>
 
