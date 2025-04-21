@@ -1,6 +1,9 @@
 /**
  * @Desc:Sample React Native App
  * https://github.com/facebook/react-native
+ * 注：StatusBar组件只在Android上使用
+ *
+ *
  */
 
 import React, {useState} from 'react';
@@ -28,6 +31,8 @@ import About from "./views/02_flex/index";
 import ReactiveFlex from "./views/03_reactive";
 import AlertButton from "./views/04_alert_button";
 import SwitchStatusBar from "./views/05_Switch_StatusBar";
+import MyActivityIndicator from "./views/06_activity_indicator";
+import MyImage from "./views/07_image";
 
 type SectionProps = PropsWithChildren<{
     title: string;
@@ -84,7 +89,7 @@ function App(): React.JSX.Element {
     }
     return (
         <View style={backgroundStyle}>
-            {/*移动设备顶端状态条*/}
+            {/*移动设备顶端状态条,注：StatusBar只在Android上使用*/}
             <StatusBar
                 barStyle={isDarkMode ? 'light-content' : 'dark-content'}
                 backgroundColor={backgroundStyle.backgroundColor}
@@ -110,6 +115,12 @@ function App(): React.JSX.Element {
                             setVisibleStatus(!visibleStatus);
                         }}></Button>
                     </View>
+                    {/*七、任务进度指示条*/}
+                    <View>
+                        <MyActivityIndicator/>
+                    </View>
+                    {/*八、Image组件*/}
+                    <MyImage/>
 
                 </View>
 

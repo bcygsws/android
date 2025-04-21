@@ -18,7 +18,7 @@ const SwitchStatusBar = () => {
             <Text>Switch组件</Text>
             <View style={styles.container}>
                 <Switch
-                    trackColor={{false: '#767577', true: '#81b0ff'}}
+                    trackColor={{false: 'green', true: 'red'}}
                     thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
                     value={isEnabled}
                     onValueChange={() => setIsEnabled(!isEnabled)}
