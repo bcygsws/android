@@ -33,6 +33,7 @@ import AlertButton from "./views/04_alert_button";
 import SwitchStatusBar from "./views/05_Switch_StatusBar";
 import MyActivityIndicator from "./views/06_activity_indicator";
 import MyImage from "./views/07_image";
+import MyTextInput from "./views/ 08_textinput";
 
 type SectionProps = PropsWithChildren<{
     title: string;
@@ -99,6 +100,8 @@ function App(): React.JSX.Element {
             {/*高版本才可以使用100%来设置宽度，0.6版本需要使用Dimensions.get('window').width/Dimensions.get('window').height获取宽高*/}
             <ScrollView style={[scrollBackground, {width: Dimensions.get('window').width}]}>
                 <View style={{paddingRight: safePadding, paddingLeft: safePadding}}>
+                    {/*九、TextInput组件*/}
+                    <MyTextInput/>
                     {/*rn中style声明的三种方式*/}
                     <Home/>
                     {/*rn中flex 布局*/}
@@ -117,10 +120,11 @@ function App(): React.JSX.Element {
                     </View>
                     {/*七、任务进度指示条*/}
                     <View>
-                        <MyActivityIndicator/>
+                        {/*<MyActivityIndicator/>*/}
                     </View>
                     {/*八、Image组件*/}
                     <MyImage/>
+
 
                 </View>
 

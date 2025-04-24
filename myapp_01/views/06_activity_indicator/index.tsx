@@ -1,4 +1,4 @@
-import {ActivityIndicator, Platform, StyleSheet, View} from "react-native";
+import {ActivityIndicator, Alert, Platform, StyleSheet, View} from "react-native";
 
 /**
  * @Desc:任务进度指示条
