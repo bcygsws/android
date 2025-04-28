@@ -20,11 +20,7 @@ import {
 } from 'react-native';
 
 import {
-    Colors,
-    DebugInstructions,
-    Header,
-    LearnMoreLinks,
-    ReloadInstructions,
+    Colors
 } from 'react-native/Libraries/NewAppScreen';
 import Home from "./views/01_three_styles/index";
 import About from "./views/02_flex/index";
